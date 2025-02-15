@@ -176,20 +176,7 @@ A classe `ProcessingTask` é um modelo Django que armazena as informações nece
 
 ---
 
-## 7. Tratamento de Erros
-
-- **Arquivo não encontrado:**  
-  Se o arquivo de imagem não for localizado (campo `input_data`), é gerado um `FileNotFoundError` e a tarefa é marcada como "failed".
-
-- **Erros durante o processamento:**  
-  Qualquer exceção durante a comunicação com o serviço de IA, avaliação do JSON (uso de `eval()`) ou extração dos dados resultará na atualização do status para "failed" e no armazenamento da mensagem de erro no campo `result`.
-
-- **Uso de `eval()`:**  
-  A função `eval()` é utilizada para converter strings em objetos Python, mas pode lançar exceções se o conteúdo não estiver no formato esperado. Recomenda-se substituir por métodos mais seguros (por exemplo, `json.loads`) em melhorias futuras.
-
----
-
-## 8. Exemplo de Fluxo Completo
+## 7. Exemplo de Fluxo Completo
 
 1. **Início:**  
    O usuário envia uma requisição para `localhost:8777` com o arquivo da imagem, o `document_type`, o `external_reference` e a `webhook_url`.
