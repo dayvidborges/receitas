@@ -9,6 +9,13 @@
 
 Este sistema é responsável pelo processamento assíncrono de imagens de documentos, com foco na validação e extração de informações de prescrições médicas e encaminhamentos para exames. A arquitetura envolve uma aplicação Django que integra o Celery para o processamento em background, além da comunicação com um serviço de inteligência artificial (IA) que analisa a imagem e retorna informações estruturadas.
 
+## 1.1 SETUP DOS CONTAINERS
+
+```bash
+docker build
+docker compose up
+```
+
 ---
 
 ## 2. Arquitetura e Componentes
