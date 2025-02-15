@@ -13,7 +13,25 @@ Este sistema é responsável pelo processamento assíncrono de imagens de docume
 
 ```bash
 docker build
-docker compose up
+docker compose up -d
+
+# Instalar o database 'receitas' dentro do server postgress
+docker exec -it postgres psql -U postgres
+CREATE DATABASE receitas;
+
+
+# Fazer as migrations no django e adicionar um super user
+docker exec -it django-app sh
+# python3 manage.py makemigrations
+# python3 manage.py migrate
+# python3 manage.py createsuperuser
+login
+email
+pass1
+pass2
+
+docker compose down
+docker compose up -d
 ```
 
 ---
